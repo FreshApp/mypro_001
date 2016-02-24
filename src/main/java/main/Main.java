@@ -15,6 +15,7 @@ public class Main {
         AllRequestsServlet allRequestsServlet = new AllRequestsServlet();
         MirrorRequestsServlet mirrorServlet = new MirrorRequestsServlet();
 
+
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.addServlet(new ServletHolder(allRequestsServlet), "/*");
         context.addServlet(new ServletHolder(mirrorServlet), "/mirror");
