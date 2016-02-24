@@ -15,16 +15,19 @@ public class Main {
         AllRequestsServlet allRequestsServlet = new AllRequestsServlet();
         MirrorRequestsServlet mirrorServlet = new MirrorRequestsServlet();
 
-
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.addServlet(new ServletHolder(allRequestsServlet), "/*");
         context.addServlet(new ServletHolder(mirrorServlet), "/mirror");
-
         Server server = new Server(8080);
         server.setHandler(context);
 
         server.start();
+        //java.util.logging.Logger.getGlobal().info("Server started");
+        System.out.println("Server started");
         server.join();
+
+
+
     }
 
 }
